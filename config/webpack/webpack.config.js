@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.join(__dirname + '/dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -19,27 +19,27 @@ module.exports = {
             presets: ['@babel/preset-env'],
             plugins: [
               '@babel/plugin-proposal-object-rest-spread',
-              '@babel/plugin-proposal-class-properties'
-            ]
-          }
-        }
+              '@babel/plugin-proposal-class-properties',
+            ],
+          },
+        },
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './client/public/main.html'
-    })
+      template: './client/public/main.html',
+    }),
   ],
   devServer: {
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };
