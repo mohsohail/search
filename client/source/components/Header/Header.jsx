@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
-const Header = props => {
+const Header = (props) => {
   return (
     <nav className="nav-styles">
       <ul>
@@ -9,10 +9,10 @@ const Header = props => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/explore">Explore</Link>
+          <Link to="/page2">Page 2</Link>
         </li>
         <li>
-          <Link to="/checkout">Checkout</Link>
+          <Link to="/page3">Page 3</Link>
         </li>
       </ul>
     </nav>
