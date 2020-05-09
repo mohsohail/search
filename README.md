@@ -1,3 +1,3 @@
-# react-get-started
+# search
 
-react starter kit
+A search component that mimics YouTube search
