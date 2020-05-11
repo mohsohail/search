@@ -1,0 +1,79 @@
+.search-wrapper {
+  margin: 50px 300px;
+  // width: 600px;
+}
+
+.search-text {
+  width: 400px;
+  border: 1px solid grey;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px 1px rgba(0, 0, 0, 0.18);
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.73);
+}
+
+.search-text input {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.73);
+  padding: 10 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-text ul {
+  list-style-type: none;
+  padding: 10px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid grey;
+  height: 350px;
+  overflow: auto;
+}
+
+.search-text ul::before {
+  content: '';
+}
+
+.search-text li {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.search-text li:hover {
+  background-color: beige;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: beige;
+  cursor: pointer;
+}
+
+.suggestion-id {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+  margin-bottom: 5px;
+}
+.suggestion-name {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.suggestion-address {
+  font-size: 15px;
+  color: gray;
+}
+.no-suggestions {
+  font-size: 18px;
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.highlight-search {
+  color: red;
+}

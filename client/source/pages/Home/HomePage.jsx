@@ -15,18 +15,18 @@ class HomePage extends Component {
     return (
       <div>
         <Home {...this.props} />
-        <button onClick={this.handleFooClick}>click me</button>
+        {/* <button onClick={this.handleFooClick}>click me</button> */}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    foo: state.foo
+    foo: state.foo,
   };
 };
 
 export default connect(mapStateToProps, {
-  dispatchFoo
+  dispatchFoo,
 })(HomePage);
