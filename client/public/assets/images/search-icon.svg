@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:#ef445c}.cls-2{clip-path:url(#clip-path)}
+        </style>
+        <clipPath id="clip-path">
+            <path id="Rectangle_264" d="M0 0h20v20H0z" class="cls-1" data-name="Rectangle 264" transform="translate(-.107)"/>
+        </clipPath>
+    </defs>
+    <g id="Mask_Group_45" class="cls-2" data-name="Mask Group 45" transform="translate(.107)">
+        <g id="magnifying-glass" transform="translate(-.114)">
+            <path id="Path_1766" d="M20.294 19.118l-4.808-4.808a8.422 8.422 0 1 0-1.18 1.18l4.808 4.8a.833.833 0 0 0 1.18-1.176zm-11.327-3.4a6.753 6.753 0 1 1 6.755-6.751 6.76 6.76 0 0 1-6.755 6.751z" class="cls-1" data-name="Path 1766" transform="translate(-.539 -.539)"/>
+        </g>
+    </g>
+</svg>

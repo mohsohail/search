@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import renderHTML from 'react-render-html';
 
 import './search.scss';
 
@@ -59,8 +59,6 @@ class Search extends Component {
       if (activeSuggestion === 0) {
         return;
       }
-
-      console.log(e.target);
       this.setState({ activeSuggestion: activeSuggestion - 1 });
     } else if (e.keyCode === 40) {
       if (activeSuggestion - 1 === filteredSuggestions.length) {
@@ -69,6 +67,22 @@ class Search extends Component {
 
       this.setState({ activeSuggestion: activeSuggestion + 1 });
     }
+  };
+
+  getName = (suggestion) => {
+    const { userInput } = this.state;
+    const regEx = new RegExp(userInput, 'g');
+    let text = (
+      <div className="suggestion-name">{`${suggestion.name.replace(
+        regEx,
+        `<span className="highlight">${userInput}</span>`
+      )}`}</div>
+    );
+    return text.props.children;
+  };
+
+  handleActiveSuggestion = (i) => {
+    this.setState({ activeSuggestion: i + 1 });
   };
 
   render() {
@@ -88,13 +102,11 @@ class Search extends Component {
                 <li
                   key={i}
                   onClick={onClick}
+                  onMouseOver={() => this.handleActiveSuggestion(i)}
                   className={activeSuggestion === i + 1 ? 'highlight' : ''}
                 >
                   <div className="suggestion-id">{suggestion.id}</div>
-                  <div className="suggestion-name">{`${suggestion.name.replace(
-                    /userInput/g,
-                    `<span>${userInput}</span>`
-                  )}`}</div>
+                  {renderHTML(this.getName(suggestion))}
                   <div className="suggestion-address">{`${suggestion.address} Pincode: ${suggestion.pincode}`}</div>
                 </li>
               );
@@ -115,6 +127,16 @@ class Search extends Component {
             onKeyDown={onKeyDown}
             value={userInput}
           />
+          {userInput ? (
+            <img
+              className="search-close"
+              src="public/assets/images/close-icon-caret.svg"
+              alt="close.svg"
+              onClick={this.clearInput}
+            />
+          ) : (
+            <img src="/assets/images/search-grey-icon.svg" alt="search-grey-icon.svg" />
+          )}
           {suggestionsListComponent}
         </div>
       </div>
